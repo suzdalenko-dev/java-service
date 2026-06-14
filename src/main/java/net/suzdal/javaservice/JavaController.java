@@ -27,7 +27,7 @@ public class JavaController {
     public Map<String, Object> recalcularCostes(@RequestParam(required = false) String articulo) {
         Map<String, Object> response = new LinkedHashMap<>();
         response.put("ok", true);
-        response.put("service", "java-service y");
+        response.put("service", "java-service y2");
         response.put("articulo", articulo);
         response.put("mensaje", "Aqui ira el calculo pesado de costes en Java Spring Boot");
         response.put("time", Instant.now().toString());
