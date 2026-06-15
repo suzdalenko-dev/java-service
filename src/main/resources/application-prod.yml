@@ -1,0 +1,34 @@
+server:
+  address: 0.0.0.0
+  port: 8080
+  shutdown: graceful
+  forward-headers-strategy: framework
+
+spring:
+  application:
+    name: java-service
+  lifecycle:
+    timeout-per-shutdown-phase: 20s
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      probes:
+        enabled: true
+      show-details: never
+  health:
+    livenessstate:
+      enabled: true
+    readinessstate:
+      enabled: true
+
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n"
+  level:
+    root: INFO
+    net.suzdal: INFO

@@ -1,0 +1,26 @@
+# Compose SOLO para desarrollo local (probar java-service aislado).
+# Producción usa el docker-compose.yml del repo docker-infra,
+# que orquesta este servicio junto con net-service, nginx, etc.
+#
+#   docker compose -f docker-compose.dev.yml up --build
+
+services:
+  java-service:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: java-service:dev
+    container_name: java-service-dev
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      JAVA_OPTS: "-XX:MaxRAMPercentage=75 -XX:+UseG1GC"
+      TZ: Europe/Madrid
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8080/actuator/health"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 30s
