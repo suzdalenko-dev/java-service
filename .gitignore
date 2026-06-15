@@ -1,0 +1,39 @@
+# Maven build output
+target/
+release/
+*.jar
+*.war
+*.class
+
+# Maven temporales
+.mvn/wrapper/maven-wrapper.jar
+dependency-reduced-pom.xml
+
+# Logs
+*.log
+logs/
+
+# VS Code (mantenemos settings.json compartido)
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+
+# IntelliJ / Eclipse (por si alguien los usa)
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+bin/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Variables de entorno locales
+.env
+.env.local
+application-local.yml
+application-local.properties
