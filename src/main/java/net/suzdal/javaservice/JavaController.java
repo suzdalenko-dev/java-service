@@ -45,7 +45,7 @@ public class JavaController {
         return response;
     }
 
-    @GetMapping("/klintsy")
+    @GetMapping("/klintsyx")
     public Map<String, Object> recalcularCostes3(@RequestParam(required = false) String articulo) {
         Map<String, Object> response = new LinkedHashMap<>();
         response.put("ok", true);
