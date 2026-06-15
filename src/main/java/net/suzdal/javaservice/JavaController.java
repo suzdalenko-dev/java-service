@@ -44,4 +44,15 @@ public class JavaController {
         response.put("time", Instant.now().toString());
         return response;
     }
+
+    @GetMapping("/klintsy")
+    public Map<String, Object> recalcularCostes3(@RequestParam(required = false) String articulo) {
+        Map<String, Object> response = new LinkedHashMap<>();
+        response.put("ok", true);
+        response.put("service", "java-service");
+        response.put("articulo", articulo);
+        response.put("mensaje", "Aqui ira el calculo pesado de costes en Java Spring Boot");
+        response.put("time", Instant.now().toString());
+        return response;
+    }
 }
