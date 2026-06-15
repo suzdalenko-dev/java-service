@@ -10,10 +10,10 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/java")
+@RequestMapping("/api")
 public class JavaController {
 
-    @GetMapping("/health")
+    @GetMapping("/")
     public Map<String, Object> health() {
         Map<String, Object> response = new LinkedHashMap<>();
         response.put("ok", true);
@@ -23,11 +23,11 @@ public class JavaController {
         return response;
     }
 
-    @GetMapping("/recalcular-costes")
+    @GetMapping("/suzdalenko")
     public Map<String, Object> recalcularCostes(@RequestParam(required = false) String articulo) {
         Map<String, Object> response = new LinkedHashMap<>();
         response.put("ok", true);
-        response.put("service", "java-service y2");
+        response.put("service", "java-service");
         response.put("articulo", articulo);
         response.put("mensaje", "Aqui ira el calculo pesado de costes en Java Spring Boot");
         response.put("time", Instant.now().toString());
