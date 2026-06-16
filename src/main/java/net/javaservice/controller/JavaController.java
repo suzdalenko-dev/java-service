@@ -1,4 +1,4 @@
-package net.suzdal.javaservice;
+package net.javaservice.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,9 +17,7 @@ public class JavaController {
     public Map<String, Object> health() {
         Map<String, Object> response = new LinkedHashMap<>();
         response.put("ok", true);
-        response.put("service", "java-service x");
-        response.put("status", "UP");
-        response.put("time", Instant.now().toString());
+        response.put("API", "API");
         return response;
     }
 

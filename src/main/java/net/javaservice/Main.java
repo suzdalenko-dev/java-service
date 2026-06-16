@@ -1,4 +1,4 @@
-package net.suzdal.javaservice;
+package net.javaservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
