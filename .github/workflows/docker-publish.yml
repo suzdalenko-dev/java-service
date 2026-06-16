@@ -1,4 +1,4 @@
-name: Build & Publish Docker image
+name: Java Service Build & Publish Docker image
 
 # Construye la imagen y la publica en GHCR cuando se mergea a main
 # o cuando se etiqueta una release (vX.Y.Z). Permite tambien ejecucion manual.
